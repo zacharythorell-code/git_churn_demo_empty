@@ -2,7 +2,7 @@
   "gitReferences": {
     "python": {
       "remote": "git@github.com:zachthorell-code/code_library_test.git",
-      "checkout": "",
+      "checkout": "main",
       "remotePath": "",
       "isDirty": false
     }
