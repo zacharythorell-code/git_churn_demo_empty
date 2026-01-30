@@ -1,5 +1,12 @@
 {
-  "gitReferences": {},
+  "gitReferences": {
+    "python": {
+      "remote": "git@github.com:zachthorell-code/code_library_test.git",
+      "checkout": "",
+      "remotePath": "",
+      "isDirty": false
+    }
+  },
   "pythonPath": [
     "python"
   ],
