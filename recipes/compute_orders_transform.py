@@ -7,6 +7,7 @@ from dataiku import pandasutils as pdu
 revenue_loss = dataiku.Dataset("revenue_loss")
 revenue_loss_df = revenue_loss.get_dataframe()
 
+revenue_loss_df['Total_Charge_Markup']= revenue_loss_df['Total_Charge'] * 1.35
 
 # Compute recipe outputs from inputs
 # TODO: Replace this part by your actual code that computes the output, as a Pandas dataframe
