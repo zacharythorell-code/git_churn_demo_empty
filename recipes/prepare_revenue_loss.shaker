@@ -1,55 +1,252 @@
 {
-  "steps": [
-    {
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "column": "revenue_loss",
-        "expression": "prediction * ( Total_Charge - (proba_0 * Total_Charge))"
-      },
-      "metaType": "PROCESSOR",
-      "preview": true,
-      "disabled": false,
-      "alwaysShowComment": false
-    }
-  ],
-  "maxProcessedMemTableBytes": -1,
-  "origin": "PREPARE_RECIPE",
   "columnsSelection": {
-    "mode": "ALL"
+    "mode": "ALL",
+    "list": [
+      {
+        "d": true,
+        "name": "State"
+      },
+      {
+        "d": true,
+        "name": "Account_Length"
+      },
+      {
+        "d": true,
+        "name": "Area_Code"
+      },
+      {
+        "d": true,
+        "name": "Phone"
+      },
+      {
+        "d": true,
+        "name": "Intl_Plan"
+      },
+      {
+        "d": true,
+        "name": "VMail_Plan"
+      },
+      {
+        "d": true,
+        "name": "VMail_Message"
+      },
+      {
+        "d": true,
+        "name": "Day_Mins"
+      },
+      {
+        "d": true,
+        "name": "Day_Calls"
+      },
+      {
+        "d": true,
+        "name": "Day_Charge"
+      },
+      {
+        "d": true,
+        "name": "Eve_Mins"
+      },
+      {
+        "d": true,
+        "name": "Eve_Calls"
+      },
+      {
+        "d": true,
+        "name": "Eve_Charge"
+      },
+      {
+        "d": true,
+        "name": "Night_Mins"
+      },
+      {
+        "d": true,
+        "name": "Night_Calls"
+      },
+      {
+        "d": true,
+        "name": "Night_Charge"
+      },
+      {
+        "d": true,
+        "name": "Intl_Mins"
+      },
+      {
+        "d": true,
+        "name": "total_Mins"
+      },
+      {
+        "d": true,
+        "name": "Intl_Calls"
+      },
+      {
+        "d": true,
+        "name": "Intl_Charge"
+      },
+      {
+        "d": true,
+        "name": "Total_Charge"
+      },
+      {
+        "d": true,
+        "name": "ratio_charge_min"
+      },
+      {
+        "d": true,
+        "name": "CustServ_Calls"
+      },
+      {
+        "d": true,
+        "name": "Churn"
+      },
+      {
+        "d": true,
+        "name": "cluster_labels"
+      },
+      {
+        "d": true,
+        "name": "proba_0"
+      },
+      {
+        "d": true,
+        "name": "proba_1"
+      },
+      {
+        "d": true,
+        "name": "prediction"
+      },
+      {
+        "d": true,
+        "name": "revenue_loss"
+      }
+    ]
   },
-  "coloring": {
-    "scheme": "MEANING_AND_STATUS",
-    "individualColumns": [],
-    "valueColoringMode": "HASH"
-  },
-  "sorting": [],
-  "analysisColumnData": {},
   "explorationSampling": {
+    "_refreshTrigger": 0,
     "selection": {
+      "latestPartitionsN": 1,
+      "maxRecords": 30000,
+      "maxRecordsForDisplay": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
       "maxStoredBytes": -1,
+      "ascending": true,
+      "timeout": -1,
       "filter": {
         "distinct": false,
         "enabled": false
       },
       "partitionSelectionMethod": "ALL",
-      "latestPartitionsN": 1,
-      "samplingMethod": "HEAD_SEQUENTIAL",
-      "maxRecords": 30000,
       "targetRatio": 0.02,
-      "withinFirstN": -1,
-      "maxReadUncompressedBytes": -1
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
     },
-    "autoRefreshSample": false,
-    "_refreshTrigger": 0
+    "autoRefreshSample": false
   },
-  "vizSampling": {
-    "autoRefreshSample": false,
-    "_refreshTrigger": 0
-  },
+  "explorationFilters": [],
+  "columnOrder": [],
+  "columnUseScientificNotationByName": {},
+  "origin": "PREPARE_RECIPE",
   "exploreUIParams": {
     "autoRefresh": true
   },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "expression": "prediction * ( Total_Charge - (proba_0 * Total_Charge))",
+        "column": "revenue_loss",
+        "errorColumn": ""
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "RoundProcessor",
+      "params": {
+        "mode": "ROUND",
+        "places": 2,
+        "columns": [
+          "Total_Charge"
+        ],
+        "precision": 0,
+        "appliesTo": "SINGLE_COLUMN"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "useMemTable": false,
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": -1,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "FULL",
+      "ascending": true
+    },
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "flagNumericValues": true,
+  "columnWidthsByName": {
+    "Night_Charge": 134,
+    "Intl_Mins": 134,
+    "Day_Mins": 134,
+    "Area_Code": 100,
+    "Account_Length": 120,
+    "Intl_Plan": 100,
+    "Night_Mins": 134,
+    "Intl_Calls": 100,
+    "proba_0": 148,
+    "proba_1": 155,
+    "CustServ_Calls": 120,
+    "Phone": 100,
+    "revenue_loss": 134,
+    "VMail_Message": 113,
+    "Total_Charge": 134,
+    "cluster_labels": 148,
+    "Intl_Charge": 134,
+    "Eve_Mins": 134,
+    "Eve_Calls": 100,
+    "Eve_Charge": 134,
+    "Churn": 100,
+    "Night_Calls": 100,
+    "State": 100,
+    "VMail_Plan": 100,
+    "prediction": 100,
+    "Day_Calls": 100,
+    "Day_Charge": 134,
+    "total_Mins": 141,
+    "ratio_charge_min": 162
+  },
+  "sorting": [],
   "globalSearchQuery": "",
-  "explorationFilters": [],
-  "previewMode": "ALL_ROWS"
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "coloringGroups": [],
+    "valueColoringMode": "HASH",
+    "individualColumnsRules": []
+  }
 }
