@@ -91,7 +91,6 @@
       "zonesManualPositioning": false
     },
     "gitCommitMode": "AUTO",
-    "useRemoteGit": true,
     "disableAutomaticTriggers": false,
     "integrations": {
       "integrations": []
