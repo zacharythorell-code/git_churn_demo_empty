@@ -1,7 +1,7 @@
 {
   "gitReferences": {
     "python": {
-      "remote": "git@github.com:zachthorell-code/code_library_test.git",
+      "remote": "git@github.com:zacharythorell-code/code_library_test.git",
       "checkout": "main",
       "remotePath": "",
       "isDirty": false
