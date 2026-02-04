@@ -14,6 +14,10 @@
       "remote": "git@github.com:zacharythorell-code/code_library_test.git",
       "checkout": "main",
       "remotePath": "",
+      "lastHash": "bdc2b3eb137be3ac93181d946832ef6a3bd549e6",
+      "conflictingFiles": [],
+      "resolvedFiles": [],
+      "faultyHash": "",
       "isDirty": false
     }
   },
