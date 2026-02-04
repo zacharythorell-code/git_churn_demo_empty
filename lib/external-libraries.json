@@ -1,7 +1,29 @@
 {
-  "gitReferences": {},
+  "gitReferences": {
+    "python": {
+      "remote": "git@github.com:zacharythorell-code/code_library_test.git",
+      "checkout": "main",
+      "remotePath": "",
+      "lastHash": "fa4819434d1bfb3b3a0f614dd260371ce446af59",
+      "conflictingFiles": [],
+      "resolvedFiles": [],
+      "faultyHash": "",
+      "isDirty": false
+    },
+    "orders_parse.py": {
+      "remote": "git@github.com:zacharythorell-code/code_library_test.git",
+      "checkout": "main",
+      "remotePath": "",
+      "lastHash": "bdc2b3eb137be3ac93181d946832ef6a3bd549e6",
+      "conflictingFiles": [],
+      "resolvedFiles": [],
+      "faultyHash": "",
+      "isDirty": false
+    }
+  },
   "pythonPath": [
-    "python"
+    "python",
+    "orders_parse.py"
   ],
   "rsrcPath": [
     "R"
